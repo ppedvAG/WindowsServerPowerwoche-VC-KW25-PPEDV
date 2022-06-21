@@ -1,0 +1,5 @@
+Djoin.exe /provision /domain <Domänenname> /machine <Computername> /savefile <blob.txt>
+
+Djoin.exe /provision /domain <Domänenname> /machine <Computername> /machineou <DN der OU> /savefile <blob.txt>
+
+Djoin.exe /requestodj /loadfile <Pfad zur blob.txt> /windowspath %windir% /localos

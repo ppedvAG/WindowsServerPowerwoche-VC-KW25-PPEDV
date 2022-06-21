@@ -1,0 +1,33 @@
+Rename-Computer -NewName NEUER NAME	(Umbenennen)
+--------------------------------------------------
+Get-ChildItem Env:\COMPUTERNAME		(überprüfen)
+
+netdom renamecomputer alter-Name /newname:neuer-Name.contoso.com  (nur mit RSAT)
+--------------------------------------------------------------------------------
+wmic computersystem where name="Alter_Name" call rename name="Neuer_name"   (Mit WMI)
+
+$name = Read-Host
+Rename-Computer -NewName $name
+Echo " Der Computer muss neue gestartet werden!"
+Restart-Computer
+---------------------------------------------------------------------------
+Add-Computer -DomainName Domain02 -OUPath "OU=testOU,DC=domain,DC=Domain,DC=com"
+------------------------------------------------------------------------------------
+Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
+------------------------------------------------------------
+Add-Computer -ComputerName Server01 -DomainName sample.local -NewName PCx -Credential sample\administrator -Restart
+
+Test-NetConnection -ComputerName "www.contoso.com" -InformationLevel "Detailed"
+----------------------------------------------------------------------------------
+Test-NetConnection -ComputerName www.google.com -DiagnoseRouting -InformationLevel Detailed
+ComputerName : www.google.com
+
+Test-NetConnection -ComputerName dc19-1 -Port 25
+
+sysdm.cpl -> System erweitert z.B. lokale Profile
+
+ncpa.cpl -> Netzwerkumgebung
+
+
+
+

@@ -1,0 +1,7 @@
+Powershell oder sconfig.cmd
+
+add-computer –domainname "YourDomainName"  -restart
+
+Get-NetAdapter
+New-NetIPAddress -InterfaceIndex 4 -IPAddress 192.168.0.101 -PrefixLength 24 -DefaultGateway 192.168.0.1
+Set-DnsClientServerAddress -InterfaceIndex 4 -ServerAddresses 192.168.100.100
