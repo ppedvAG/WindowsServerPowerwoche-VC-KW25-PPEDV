@@ -1,0 +1,1 @@
+﻿Set-VMProcessor -VMName m19-2  -ExposeVirtualizationExtensions $true
